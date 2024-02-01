@@ -1,0 +1,245 @@
+# https://developer.mozilla.org/en-US/docs/Web/HTML
+# https://developer.mozilla.org/en-US/docs/Web/CSS
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chronic Kidney Disease</title>
+
+</head>
+
+<body>
+    <div style="color:black;" class="container">
+        <h2 class='container-heading'><span class="heading_font">Chronic Kidney Disease Prediction</span></h2>
+    </div>
+
+    <div style="color:black;" class="ml-container">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <br>
+            <br>
+            <h3>Age</h3>
+            <input id="first" name="age" placeholder="Ex: (10,20,30,40,50)" required="required">
+            <br>
+            <h3>Blood Pressure</h3>
+            <input id="second" name="blood_pressure" placeholder="60,70,80,90,120" required="required">
+            <br>
+            <h3>Specific Gravity</h3>
+            <input id="third" name="specific_gravity" placeholder="Ex: (1.005,1.010,1.015,1.020,1.025)"
+                required="required">
+            <br>
+            <h3>Albumin</h3>
+            <input id="fourth" name="albumin" placeholder="(0,1,2,3,4,5)" required="required">
+            <br>
+            <h3>Red Blood Cells</h3>
+            <input id="fifth" name="red_blood_cells" placeholder="in Millions/cmm" required="required">
+            <br>
+            <h3>Blood Glucose Random</h3>
+            <input id="sixth" name="blood_glucose_random" placeholder="(Numerical) in mgs/dl" required="required">
+            <br>
+            <h3>Blood Urea</h3>
+            <input id="seventh" name="blood_urea" placeholder="(Numerical) in mgs/dl" required="required">
+            <br>
+            <h3>Serum Creatinine</h3>
+            <input id="eight" name="serum_creatinine" placeholder="(Numerical) in mgs/dl" required="required">
+            <br>
+            <h3>Sodium</h3>
+            <input id="ninth" name="sodium" placeholder="(Numerical) in mEq/L" required="required">
+            <br>
+            <h3>Haemoglobin</h3>
+            <input id="tenth" name="haemoglobin" placeholder="(Numerical) in gms" required="required">
+            <br>
+            <h3>Packed Cell Volume</h3>
+            <input id="eleven" name="packed_cell_volume" placeholder="(Numerical) in count" required="required">
+            <br>
+            <h3>White Blood Cell</h3>
+            <input id="twelve" name="white_blood_cell" placeholder="(Numerical) in cells/cumm" required="required">
+            <br>
+            <h3>Hypertension</h3>
+            <input id="thirteen" name="hypertension" placeholder="(Numerical) 0 or 1" required="required">
+            <br>
+            <h3>Diabetes Mellitus</h3>
+            <input id="fourteen" name="diabetes_mellitus" placeholder="Numerical 0 or 1" required="required">
+            <br>
+            <h3>Coronary Artery Disease</h3>
+            <input id="fifteen" name="coronary_artery_disease" placeholder="(Numerical) 0 or 1" required="required">
+            <br>
+            <br>
+            <br>
+            <button id="submit" type="submit ">Submit and Predict</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class='footer-description'>©2024 Vidhyadhar Melam</p>
+
+        </form>
+    </div>
+
+
+
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+
+        .container-heading {
+            margin: 0;
+        }
+
+        .heading_font {
+            color: black;
+            font-family: 'Pacifico', cursive;
+            font-size: 50px;
+            font-weight: normal;
+        }
+
+
+
+        /* Box */
+        #first {
+            border-radius: 5px;
+            height: 30px;
+            width: 300px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #fifth {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #sixth {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #seventh {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #eight {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #ninth {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #tenth {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #eleven {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #twelve {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #thirteen {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #fourteen {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #fifteen {
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+
+
+        #submit {
+            width: 200px;
+            height: 43px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+    </style>
+
+
+</body>
+
+</html>

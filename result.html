@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronic Kidney Disease Prediction Result</title>
+</head>
+# https://developer.mozilla.org/en-US/docs/Web/HTML
+# https://developer.mozilla.org/en-US/docs/Web/CSS
+
+<body>
+
+    <div style="color:#450ad1;" class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2 class='container-heading'><span class="heading_font">Chronic Kidney Disease Prediction</span></h2>
+
+            <br><br><br><br>
+
+            <div style="color:#4e1adf;" class="results">
+                {% if prediction==1 %}
+                <h1><span class='danger'> Sorry! <br><br>You might have chronic kidney disease.</span></h1>
+                <br><br><br><br><br><br>
+
+                {% elif prediction==0 %}
+                <h1><span class='safe'> Great, You're Safe! <br><br>You don't have Chronic Kidney Disease.</span></h1>
+
+                {% endif %}
+            </div>
+        </form>
+
+    </div>
+    <div>
+        <br><br> <br><br><br><br><br><br><br><br>
+
+        <p class='footer-description'>©2024 Vidhyadhar Melam</p>
+
+    </div>
+
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-heading {
+            margin: 0;
+        }
+
+        .heading_font {
+            color: black;
+            font-family: 'Pacifico', cursive;
+            font-size: 45px;
+            font-weight: normal;
+        }
+    </style>
+
+
+</body>
+
+</html>
